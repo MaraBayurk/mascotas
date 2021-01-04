@@ -1,33 +1,17 @@
-import { useEffect, useState } from "react";
-import cardAnimal from "cardAnimal"
+// ejemplo de como hacer llamada a la base de datos y agregar un boton
+// en el que muestre como trae la informacion.
 
-function Home(){
-    const [animales, setAnimales] = useState([])
+import axios from "axios"
+export default function Home(){
+    function handleBd(){
+        axios.get("http://localhost:3001/animals")
+        .then(data=>console.log(data.data))
+    }
 
-    useEffect(()=>{
-        "llamada a la api para traer info de todos los animales"
-        "traemos un array con objetos animales"
-        setAnimales("con lo que traemos de la BD")
-        axios.get("localhost:3001/animals/")
-        .then(data => setAnimals(data.data))
-    })
-
-    return(
-        <>
-        {animales.map((elemento,index)=>{
-            <cardAnimal id={index} nombre={elemento.nombre} especie={elemento.especie} />
-        })}
-        <Link to={"/animals/"+0} > 
-        <div> zeus </div>
-        <div> perro </div>
-        </Link>
-
-        <Link to={"/animals/"+1} > 
-        <div> Luna</div>
-        <div> gato </div>
-        </Link>
-
-        </>
-
-    )
+    return <div>
+        <h1>Home</h1>
+        <h2>mara valentina</h2>
+        <h3>mamamama</h3>
+        <button onClick={handleBd} >BASE DE DATOS</button>
+    </div>
 }

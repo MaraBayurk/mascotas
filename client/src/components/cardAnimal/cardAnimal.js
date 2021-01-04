@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-function cardAnimal (props){
+export function cardAnimal (props){
 
     return(
         <Link to={"/animals/"+props.id} > 
-        <div> {props.nombre}</div>
-        <div> {props.especie} </div>
+        <div> {props.name}</div>
+        <div> {props.species} </div>
         </Link>
     )
 }

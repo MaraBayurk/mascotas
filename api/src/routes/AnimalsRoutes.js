@@ -1,14 +1,16 @@
-const { getAllAnimals, createAnimal, editAnimal, deleteAnimal } = require("../controllers/AnimalsController");
+const { getAllAnimals, createAnimal, editAnimal, deleteAnimal, getOneAnimal } = require("../controllers/AnimalsController");
 
 const router = require("express").Router();
 
 router
     .route('/')
+
     .get((req, res)=>{
         getAllAnimals()
         .then(animals=> res.send(animals))
         .catch(err=> res.status(400).json(err))
     })
+
     .post((req,res)=>{
         let {userId, name, description, size, species, age, adopted}= req.body;
         createAnimal(userId, name, description, size, species, age, adopted)
@@ -18,7 +20,14 @@ router
 
 router
     .route("/:id")
-    //hacer GET
+
+    .get((req,res)=>{
+        let {id}= req.params;
+        getOneAnimal(id)
+        .then(animal=> res.send(animal))
+        .catch(err=> res.status(400).json(err))
+    })
+
     .put((req, res)=>{
         let {id}= req.params
         let { name, description, size, species, age, adopted}= req.body;
@@ -26,9 +35,9 @@ router
         .then(animal=> res.send(animal))
         .catch(err=> res.status(400).json(err))
     })
+    
     .delete((req, res)=>{
         console.log(req.params);
-        
         let {id}= req.params;
         deleteAnimal(id)
         .then(frase=> res.send(frase))

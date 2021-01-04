@@ -2,7 +2,7 @@
 const { conn } = require("./src/db")
 const app = require("./src/app")
 
-conn.sync({force: false})
+conn.sync({force: true})
 .then(e=>{
     console.log('conectado')
 })

@@ -1,24 +1,26 @@
 import { useState } from "react"
-import { useParams } from "react-router"
+import { useParams, useEffect } from "react"
+import axios from "axios"
 
-export default function Animal(){
+export default function AnimalDetail(){
     const {id} = useParams()
     const [detalle, setDetalle] = useState({})
+
+useEffect(()=>{
+        axios.get("localhost:3001/animals/"+id)
+        .then((data)=>setDetalle(data.data))
+    })
 
 /*     useEffect(()=>{
         axios.get("localhost:3001/animals/"+id)
         .then((data)=>setDetalle(data.data))
     }) */
 
-    useEffect(()=>{
-        axios.get("localhost:3001/animals/"+id)
-        .then((data)=>setDetalle(data.data))
-    })
     return <div>
         <h1>Animal</h1>
-        <div>{detalle.nombre}</div>
-        <div>{detalle.raza}</div>
-        <div>{detalle.edad}</div>
+        <div>{detalle.name}</div>
+        <div>{detalle.species}</div>
+        <div>{detalle.age}</div>
 
     </div>
 }
