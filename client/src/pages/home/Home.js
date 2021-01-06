@@ -15,7 +15,7 @@ import { cardAnimal } from "../../components/cardAnimal/cardAnimal";
 
     return(
         <>
-        {animales.map((elemento,index)=>{
+        {animales.map((elemento,index) => {
             <cardAnimal
             id={index} 
             nombre={elemento.name} 
