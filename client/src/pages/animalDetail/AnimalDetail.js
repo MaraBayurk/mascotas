@@ -21,6 +21,9 @@ useEffect(()=>{
         <div>{detalle.name}</div>
         <div>{detalle.species}</div>
         <div>{detalle.age}</div>
+        <div>{detalle.description}</div>
+        <div>{detalle.size}</div>
+        <div>{detalle.adopted}</div>
 
     </div>
 }

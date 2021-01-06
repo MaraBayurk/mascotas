@@ -6,6 +6,8 @@ export function cardAnimal (props){
         <Link to={"/animals/"+props.id} > 
         <div> {props.name}</div>
         <div> {props.species} </div>
-        </Link>
+        <div> {props.size} </div>
+        <div> {props.adopted} </div>
+        </Link> 
     )
 }

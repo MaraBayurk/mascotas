@@ -1,10 +1,7 @@
-import MiniPost from "./miniPost";
-
-export default function Content(){
+export default function Posts(){
 
     return(
-        <div id="content">
-						<section>
+        <section>
 							<header>
 								<h1>Generic</h1>
 								<p>Dolor sit amet adipiscing consequat veroeros</p>
@@ -18,10 +15,6 @@ export default function Content(){
 							<p>Integer sed gravida ipsum. Pellentesque posuere rutrum orci eu varius. Pellentesque ut erat sed dolor malesuada lacinia. Praesent auctor diam sed nisi hendrerit tincidunt. Proin ut diam ante. Morbi ullamcorper ante eu magna fringilla et accumsan lorem porta. Etiam arcu ante, sagittis et luctus a, placerat vel augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 							<p>Suspendisse vulputate vulputate pulvinar. Vivamus vel ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In erat nibh, volutpat id pellentesque a, pharetra ut nunc. Sed id urna sit amet purus convallis ornare. Sed laoreet, tellus a malesuada bibendum, ligula diam dapibus est, id laoreet tortor neque vel odio. Nulla in sem metus, eu consequat nisl. In a odio est.</p>
 						</section>
-
-						<MiniPost/>
-						
-					</div>
 
     )
 }
